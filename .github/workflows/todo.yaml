@@ -28,6 +28,9 @@ jobs:
       - name: Display running containers
         run: docker compose ps
 
+      - name: Run tests
+        run: docker-compose exec -T app npm test
+
       - name: Shutdown Docker Compose
         if: always()
         run: docker compose down
